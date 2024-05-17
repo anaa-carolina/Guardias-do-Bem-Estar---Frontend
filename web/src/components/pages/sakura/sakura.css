@@ -1,0 +1,60 @@
+/* SakuraFalling.css */
+
+@keyframes sakura-fall {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1); /* Inicia fora da tela, sem rotação e no tamanho original */
+    opacity: 0;
+    opacity: 1; /* Começa invisível */
+  }
+  20% {
+    opacity: 1; /* Opacidade aumenta gradualmente */
+  }
+  50% {
+    opacity: 1; /* Opacidade aumenta gradualmente */
+  }
+  80% {
+    opacity: 1; /* Opacidade aumenta gradualmente */
+  }
+  100% {
+    transform: translate(calc(100vw + 50%), calc(100vh + 50%)) rotate(135deg) scale(0.5); /* Termina fora da tela, girado 135 graus e com tamanho reduzido */
+    opacity: 0; /* Torna-se invisível novamente */
+  }
+}
+
+.sakura-container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sakura {
+  width: 20px; /* Largura */
+  height: 40px; /* Altura */
+  background-color: rgb(250, 146, 163); /* Cor rosa */
+  border-radius: 50%; /* Formato circular */
+  position: absolute;
+  animation: sakura-fall 10s linear infinite; /* Animação */
+}
+
+.sakura:nth-child(2) {
+  width: 25px;
+  height: 45px;
+}
+
+.sakura:nth-child(3) {
+  width: 18px;
+  height: 35px;
+}
+
+.sakura:nth-child(4) {
+  width: 22px;
+  height: 42px;
+}
+
+.sakura:nth-child(5) {
+  width: 30px;
+  height: 50px;
+}
+
+/* Adicione mais ajustes de tamanho conforme necessário para outras folhas */
