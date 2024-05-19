@@ -1,66 +1,118 @@
-/* cadastro.css */
-
 .cadastro-usuario {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F2E1E9;
+
+}
+
+.cadastro-usuario-box {
+  padding: 20px;
+  border-radius: 5px;
+  margin: 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  max-width: 100%;
+}
+
+.cadastro-usuario-form {
+  text-align: center;
+  max-width: 100%; 
+}
+
+.cadastro-usuario-form h1 {
+  margin: 5px;
+  background: #EEBBD3AB;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  max-width: 100%; 
+}
+
+
+.form-group {
+  margin: 5px;
   
-  .cadastro-usuario-box {
-    width: 400px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-group input,
+.form-group select {
+  width: calc(100% - 22px); 
+}
+
+.form-group select {
+  width: 100%;
+  padding: 10px 30px 10px 10px; 
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  appearance: none;
+  background-color: #fff;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); /* Adicionando a imagem da seta */
+  background-repeat: no-repeat;
+  background-position: right 10px center; 
+}
+
+
+.form-group-box{
+  display: flex;
+  justify-content: center;
   
-  .cadastro-usuario-form {
-    text-align: center;
-  }
-  
-  .cadastro-usuario-form h1 {
-    margin-bottom: 20px;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .button-group {
-    margin-top: 20px;
-  }
-  
-  .button-group button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .button-group button:hover {
-    background-color: #0056b3;
-  }
-  
-  .voltar-login a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  .voltar-login a:hover {
-    text-decoration: underline;
-  }
-  
+}
+
+.form-group-box .form-group {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.btnCancel {
+  font-family: Yrsa;
+  font-size: 25px;
+  font-weight: 400;
+  text-align: center;
+
+
+  margin: 10px 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background: #810909;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.btnSubmit {
+  font-family: Yrsa;
+  font-size: 25px;
+  font-weight: 400;
+  text-align: center;
+
+  margin: 10px 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background: #E0A3C7;
+  color: rgba(0, 0, 0, 0.842);
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}

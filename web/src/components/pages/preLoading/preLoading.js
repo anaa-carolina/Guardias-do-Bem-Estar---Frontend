@@ -1,15 +1,15 @@
-import './preLoading.css'
-import logoGif from '../../../img/logo/GifEscudo.gif'
-import logoNome from '../../../img/logo/LogoNome.png'
+import React from 'react';
+import './preLoading.css';
+import Escudo from '../../../img/logo/EscudoComNome.png';
 
 const Preloader = () => {
     return (
+        <div className="loading-box">
+            <div className="loading">
+                <img className="logo" src={Escudo} alt="Logo" />
+            </div>
+        </div>
+    );
+};
 
-    <div className="loading">
-        <img className="logoGif" src={logoGif} />
-        <img className="logoNome" src={logoNome}/>
-    </div>
-    )
-}
-
-export default Preloader
+export default Preloader;

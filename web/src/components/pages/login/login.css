@@ -1,29 +1,10 @@
-body{
-    margin: 0;
-    height: 100vh;
-    background-color: white;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-}
-
-.loading {
-    margin: 0;
-    height: 100vh;
-    background: linear-gradient(rgb(248, 178, 239), rgb(206, 179, 201), rgb(248, 178, 239));
-    background-repeat: no-repeat;
-  
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 
 .login{
     margin: 0;
     height: 100vh;
-    background: #FFEEF7;
+    background-image: url('../../../img/sakura-background.jpg');
+    background-size: cover; 
+    background-position: center;
   
     display: flex;
     flex-direction: column;
@@ -33,19 +14,16 @@ body{
 
 
 .loginBox{
-    width: 588px;
+    width: 30%;
     height: 450px;
     border-radius: 10%;
-    border: 2px solid rgba(0, 0, 0, 0.178);
-    background-color: #D5C4F6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    background: #eebfc18c;
+
 }
 
-.loginForm{
-    height: 100%;
-    margin: 20px;
+
+.login-access{
     margin-bottom: 0;
     display: flex;
     flex-direction: column;
@@ -54,16 +32,17 @@ body{
 
 }
 
-.loginForm h1{
-    font-family: "Unna", serif;
+.login-access h1{
+    margin: 10px;
+    font-family: Bellefair;
+    font-size: 30px;
     font-weight: 400;
-    font-style: normal;
-    font-size: 20px;
     text-align: center;
+
 
 }
 
-.loginForm h2{
+.login-access h2{
     font-family: "Unna", serif;
     font-weight: 300;
     font-style: normal;
@@ -72,69 +51,71 @@ body{
 
 }
 
-.loginForm hr{
+.login-access hr{
     border: 1px;
     border-top: 2px solid #333;
     width: 50%; 
-    margin: 5px auto; 
+    margin: 2px auto; 
 }
 
-.form {
+.access {
     width: 100%;
-    max-width: 300px;
-    margin: 15px; 
+    margin: 10px; 
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.formGroup {
+.accessGroup {
     margin-bottom: 15px;
 }
   
-.formGroup label {
+.accessGroup label {
     display: block; 
 }
   
-#username , #password {
+.inputField {
     width: 300px; 
     height: 30px;
-    border: 1px solid #ccc; /* Borda leve */
-    border-radius: 5px; /* Bordas arredondadas */
+    border: 1px solid #ccc; 
+    border-radius: 30px; 
+    font-family: Bellefair;
+    font-size: 20px;
+    font-weight: 400;
+    color: #7f7f7fad;
+    box-sizing: border-box;
+    padding: 10px;
 }
 
-.checkbox {
-    margin: 15px;
-}
-
-.manterLogin {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-}
   
-.form button {
-    width: 200px;
-    padding: 10px 20px; 
-    border-radius: 5px; 
-    background-color: #3D1366; 
+.access button {
+    width: 165px;
+    padding: 6px 8px;
+    border-radius: 30px; 
+    background: #C798E4;
     color: white; 
     cursor: pointer; 
     border: none; 
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+
+    font-family: Bellefair;
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+
 }
   
-.form button:hover {
-    background-color: #7a5c97;
+.access button:hover {
+    background-color: #7a5c97d8;
 }
 
-.novoUsuario{
-    margin: 15px;
+.redefinirSenha{
+    margin: 5px;
     display: flex;
     flex-direction: column;
 }
 
-.novoUsuario a {
+.redefinirSenha a {
     font-weight: 200;
     font-size: 20px;
     font-family: "Unna", serif;
@@ -142,12 +123,71 @@ body{
     text-align: center;
     color: black;
     text-decoration: none;
+    position: relative; 
+}
+
+.redefinirSenha a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px; 
+    width: 0; 
+    height: 2px; 
+    background-color: rgba(0, 0, 0, 0.466); 
+    transition: width 0.3s ease; 
+}
+
+.redefinirSenha a:hover::after {
+    width: 100%; 
+}
+
+
+.passwordInputWrapper {
+    position: relative;
+}
+
+.passwordInputWrapper input {
+    padding-right: 40px;
+    box-sizing: border-box;
+}
+
+.passwordToggleIcon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding: 10px;
+}
+
+.newUser {
+    width: 100%;
+}
+
+.newUser hr {
+    border: 1px;
+    border-top: 2px solid #3333336e;
+    width: 100%; 
+    margin: 2px auto; 
+}
+
+.newUser button {
+    background: #5D005F;
+    width: 160px;
+    padding: 11px; 
+    border-radius: 30px; 
+    color: white; 
+    cursor: pointer; 
+    border: none; 
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+
+    font-family: Bellefair;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
 
 }
 
-.novoUsuario hr {
-    border: 1px;
-    border-top: 2px solid #333;
-    width: 300px; 
-    margin: 0 auto; 
+.newUser button:hover {
+    background-color: #7a5c97d8;
 }
