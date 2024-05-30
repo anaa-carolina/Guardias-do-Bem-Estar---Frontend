@@ -1,0 +1,56 @@
+.confirmacao {
+    background: #F2E1E9;
+    height: 100svh;
+}
+
+.confirmacao p {
+    font-family: Yrsa;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24.36px;
+    text-align: center;
+}
+
+.confirmacao hr{
+    width: 50%;
+}
+
+.confirmacao h1 {
+    font-family: Yrsa;
+    font-size: 27px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.confirmacao-box  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.confirmacao-box img {
+    height: 150px;
+    width: 150px;
+    z-index: 10;
+    position: relative;
+    top: 15px;
+    background-image: "../../../../../../img/icones/voluntario/badgeVoluntario.png";
+}
+
+.confirmacao-textbox {
+    background: #EEBBD380;
+    width: 50%;
+    border-radius: 15px;
+    z-index: 1;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.confirmacao-textbox p {
+    font-family: Tenor Sans;
+    font-size: 23px;
+    font-weight: 400;
+    text-align: center;
+
+}
