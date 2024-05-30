@@ -1,0 +1,26 @@
+
+.loading-box {
+    background-image: url('/src/assets/img/sakura-background.jpg');
+    background-size: cover; 
+    background-position: center; 
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.logo {
+    width: 276px;
+    height: 173px;
+    opacity: 0; 
+    animation: fadeIn 5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
