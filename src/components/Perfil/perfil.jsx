@@ -1,6 +1,20 @@
+import './perfil.css'
+
+import Header from '../Header/header'
+
 function Perfil() {
   return (
-    <div>perfil</div>
+    <div>
+
+      <Header/> 
+
+      <div>
+        'Perfil'
+      </div>
+
+
+
+    </div>
   )
 }
 

@@ -1,0 +1,47 @@
+
+
+.headerLine{
+    position: fixed; 
+    top: 0;        
+    width: 100%;    
+    z-index: 1000;   
+    background: #e7aacd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.headerContent{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.headerLogo img{
+    width: 65px;
+    height: 50px;
+}
+
+.toolsBar{
+    display: flex;
+    align-items: center;
+}
+
+.toolsBar ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.toolsBar li{
+    padding: 0;
+    margin: 0;
+}
+
+.logout {
+    margin-right: 15px;
+}
