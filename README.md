@@ -12,7 +12,8 @@ Currently, two official plugins are available:
 
 - Vite: 5.2.12
 - React: 18.2.0
-
+- Node: 20.14.0
+  
 # Starting
 
 To get started, clone this repository and run the following commands:
