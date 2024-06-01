@@ -84,7 +84,7 @@
     border: 1px solid #ccc; 
     border-radius: 30px; 
     font-family: Bellefair;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 400;
     color: #7f7f7fad;
     box-sizing: border-box;
@@ -213,11 +213,11 @@
     }
 
     .login-access h1 {
-        font-size: 35px;
+        font-size: 25px;
     }
 
     .inputField {
-        font-size: 22px;
+        font-size: 20px;
     }
 
     .access button {
@@ -236,7 +236,7 @@
     }
 
     .login-access h1 {
-        font-size: 28px;
+        font-size: 20px;
     }
 
     .inputField {
