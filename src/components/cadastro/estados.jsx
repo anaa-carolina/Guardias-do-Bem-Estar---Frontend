@@ -27,5 +27,5 @@ export const estadosBrasileiros = [
     { sigla: 'SP', nome: 'São Paulo' },
     { sigla: 'SE', nome: 'Sergipe' },
     { sigla: 'TO', nome: 'Tocantins' },
-];
+]
   

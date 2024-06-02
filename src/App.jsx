@@ -1,7 +1,7 @@
 import './App.css'
 import { useEffect, useState } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
-import Preloading from './components/PreLoading/preLoading'
+import Preloading from './components/PreLoading/PreLoading'
 import AppRoutes from './AppRoutes'
 
 function App() {
