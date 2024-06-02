@@ -1,4 +1,4 @@
-import "./confirmacao.css"
+import "./Confirmacao.css"
 
 import { useNavigate } from "react-router-dom"
 

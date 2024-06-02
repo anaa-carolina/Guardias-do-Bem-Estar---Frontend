@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import "./formulario.css";
+import "./Formulario.css";
 
 function Formulario() {
     const navigate = useNavigate()

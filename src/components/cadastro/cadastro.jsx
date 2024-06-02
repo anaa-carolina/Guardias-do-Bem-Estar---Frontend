@@ -1,6 +1,6 @@
-import './cadastro.css'
+import './Cadastro.css'
 // import UserPost from '../../api/UserPost'
-import { estadosBrasileiros } from './estados'
+import { estadosBrasileiros } from './Estados'
 
 
 import React, { useState } from 'react'

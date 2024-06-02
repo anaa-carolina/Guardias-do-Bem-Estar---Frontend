@@ -1,4 +1,4 @@
-import "./voluntaria.css"
+import "./Voluntaria.css"
 // import { useNavigate } from 'react-router-dom'
 
 

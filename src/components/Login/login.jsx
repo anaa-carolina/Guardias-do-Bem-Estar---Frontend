@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 // import { AuthContext } from '../autenticacao/AuthProvider'
-import './login.css'
+import './Login.css'
 
 function Login() {
     const [username, setUsername] = useState('')

@@ -1,6 +1,6 @@
-import './perfil.css'
+import './Perfil.css'
 
-import Header from '../Header/header'
+import Header from '../Header/Header'
 
 function Perfil() {
   return (
