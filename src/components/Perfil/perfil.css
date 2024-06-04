@@ -1,0 +1,199 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.profilePage{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.userProfile{
+    width: 100%;
+    margin-top: 50px;
+}
+
+.profileHeader{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.userDetails{
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.userIdentity{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+.userIdentity img{
+    width: 80px;
+    border-radius: 50%;
+}
+
+.userIdentity h1{
+    font-family: Yrsa;
+    margin: 15px 0px 0px 0px;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    color: black;
+    
+}
+
+.ProfileOverview{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.ProfileOverview h3{
+    font-family: Yrsa;
+    margin-top: 0;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    color: black;
+}
+
+.userInfo{
+    width: 100%;
+    height: 100%;
+    margin: 5px;
+    color: black;
+}
+
+.userBio{
+    font-family: Yrsa;
+    font-size: 13px;
+    font-weight: 400;
+    text-align: left;
+    color: black; 
+    padding: 10px;
+
+}
+
+.profileEdit button{
+    margin: 10px;
+    height: 27px;
+    background: #f3b2d6;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.37);
+    font-family: Yrsa;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.profileEdit button:hover{
+    margin: 10px;
+    height: 27px;
+    background: #f3b2d6;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.37);
+    font-family: Yrsa;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.userGrid{
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    gap: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    align-items: center;
+    
+}
+
+.postGrid{
+    width: 100px;
+}
+
+
+/* Consultas de mídia para responsividade */
+@media (min-width: 600px) {
+    .profileHeader {
+        flex-direction: row;
+        justify-content: space-between;
+        box-sizing: border-box;
+    }
+
+    .userDetails {
+        align-items: center;
+        flex-direction: row;
+        box-sizing: border-box;
+    }
+
+    .userIdentity {
+        width: auto;
+        white-space: nowrap;
+        text-align: left;
+        box-sizing: border-box;
+    }
+
+    .ProfileOverview {
+        justify-content: flex-start;
+        box-sizing: border-box;
+    }
+
+    .userBio {
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media (min-width: 768px) {
+    .profileHeader {
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .userGrid {
+        gap: 20px;
+        box-sizing: border-box;
+    }
+
+    .postGrid {
+        width: 150px;
+        box-sizing: border-box;
+    }
+}
+
+@media (min-width: 1024px) {
+    .profileHeader {
+        padding: 0 40px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .userGrid {
+        gap: 25px;
+        box-sizing: border-box;
+    }
+
+    .postGrid {
+        width: 200px;
+        box-sizing: border-box;
+    }
+}

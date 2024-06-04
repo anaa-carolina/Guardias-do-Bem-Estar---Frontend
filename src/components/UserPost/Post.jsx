@@ -7,7 +7,12 @@ import { useState } from 'react'
 
 const Post = () => {
   const [isOpen, setIsOpen] = useState(true)
-  const { handleFileChange, postText, handleSubmit } = PostFunction()
+  const { handleFileSelect, postText, handleSubmit } = PostFunction()
+
+  const [selectedFile, setSelectedFile] = useState(null)
+  const handleRemoveFile = () => {
+    setSelectedFile(null)
+  }
 
   const handleClose = () => {
     setIsOpen(false)
@@ -16,7 +21,6 @@ const Post = () => {
   if (!isOpen) {
     return null
   }
-
 
   return (
     <div className='postPage'>
@@ -46,12 +50,25 @@ const Post = () => {
           </div>
 
           <div className='postFile'>
-            <h2>Adicione uma foto</h2>
             <div className='addFiles'>
-              <label htmlFor="fileInput">
-                <img alt="Add Files" src={AddFiles} onChange={handleFileChange}/>
-              </label>
+              <h2>Adicione uma foto</h2>
+              <div className='files'>
+                <label>
+                  <img alt="Add Files" src={AddFiles} onClick={handleFileSelect} />
+                  <input type="file" id="fileInput" className="fileInput" onChange={(e) => setSelectedFile(e.target.files[0])} />
+                </label>
+              </div>
             </div>
+
+            <div className='addedFiles'>
+              {selectedFile && (
+                <div className='selectedFile'>
+                  <p>{selectedFile.name}</p>
+                  <button onClick={handleRemoveFile}>Remover</button>
+                </div>
+              )}
+            </div>
+
           </div>
 
           <div className='send'>
@@ -59,8 +76,8 @@ const Post = () => {
           </div>
 
         </form>
-      </div>
-    </div>
+      </div >
+    </div >
   )
 }
 

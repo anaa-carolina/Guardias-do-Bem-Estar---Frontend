@@ -8,7 +8,7 @@
 
 .postBox {
     width: 450px;
-    margin: 60px;
+    margin: auto;
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #f9f9f9;
@@ -73,14 +73,21 @@
     margin: 10px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     box-sizing: border-box;
-
     border-radius: 20px;
+
     border: 2px solid #33333369;
+    flex-direction: column;
 }
 
-.postFile h2 {
+.addFiles {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.addFiles h2 {
     margin: 15px;
     color: #000;
     text-align: left;
@@ -90,16 +97,70 @@
 
 }
 
-.addFiles {
+.files {
     margin: 15px;
 }
 
-.addFiles img {
+.files img {
     width: 30px;
 }
 
-.addFiles img:hover {
+.files img:hover {
     cursor: pointer;
+}
+
+.fileInput {
+    display: none;
+}
+
+.fileInputLabel {
+    display: inline-block;
+}
+
+.addedFiles {
+    width: 100%;
+}
+
+.selectedFile {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selectedFile p {
+    margin: 15px;
+    color: #000;
+    font-family: Yrsa;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.selectedFile button {
+    margin: 10px;
+    height: 27px;
+    background: #f3b2d6;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.37);
+    font-family: Yrsa;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.selectedFile button:hover {
+    margin: 10px;
+    height: 27px;
+    background: #f3b2d6;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.37);
+    font-family: Yrsa;
+    font-size: 15px;
+    font-weight: 400;
 }
 
 .send {
