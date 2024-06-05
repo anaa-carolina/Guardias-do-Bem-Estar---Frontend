@@ -3,7 +3,7 @@ import './PerfilFunction'
 
 import Header from '../Header/Header'
 import { useUserProfile, editUserProfile } from './PerfilFunction'
-
+import fotoPadrao from '../../assets/img/icones/voluntario/fotoPadrao.jpg'
 
 function Perfil() {
 
@@ -28,7 +28,7 @@ function Perfil() {
             <div className='userIdentity'>
 
               {/* imagem do usuário  */}
-              <img src={user.image} alt={`${user.name}'s profile`} />
+              <img src={user.image || {fotoPadrao}} alt={`${user.name}'s profile`} />
 
               {/* nome fornecido no cadastro */}
               <h1>{user.name}</h1>

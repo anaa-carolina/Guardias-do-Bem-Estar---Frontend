@@ -1,39 +1,55 @@
 import { useState, useEffect } from 'react'
 
-// Função para buscar os dados do usuário (simulação de uma chamada de API)
 export const useUserProfile = () => {
-    const [user, setUser] = useState(null)
-    const [posts, setPosts] = useState([])
-  
-    useEffect(() => {
-      // Simulando a obtenção de dados de um usuário
-      const fetchUser = async () => {
-        const userData = {
-          username: 'john_doe',
-          name: 'John Doe',
-          bio: 'This is my bio',
-          image: 'user_image_url',
-          posts: 42,
-          followers: 120,
-          following: 150,
-        };
-        const userPosts = [
-          // Simulando algumas postagens do usuário
-          { id: 1, imageUrl: 'post_image_1_url' },
-          { id: 2, imageUrl: 'post_image_2_url' },
-          // ...mais postagens
-        ]
+  const [user, setUser] = useState(null)
+  const [posts, setPosts] = useState([])
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const response = await fetch('URL_DA_API_DO_USUÁRIO')
+        if (!response.ok) {
+          throw new Error('Erro ao obter dados do usuário')
+        }
+        const userData = await response.json()
         setUser(userData)
-        setPosts(userPosts)
+      } catch (error) {
+        console.error('Erro ao obter dados do usuário:', error)
       }
-  
-      fetchUser()
-    }, [])
-  
-    return { user, posts }
+    }
+
+    const fetchUserPosts = async () => {
+      try {
+        const response = await fetch('URL_DA_API_DE_POSTAGENS')
+        if (!response.ok) {
+          throw new Error('Erro ao obter postagens do usuário')
+        }
+        const userPosts = await response.json();
+        setPosts(userPosts);
+      } catch (error) {
+        console.error('Erro ao obter postagens do usuário:', error)
+      }
+    }
+
+    fetchUser()
+    fetchUserPosts()
+  }, [])
+
+  return { user, posts }
+}
+
+export const editUserProfile = async () => {
+  try {
+    const response = await fetch('URL_PARA_EDITAR_PERFIL', {
+      method: 'PUT',
+      // Adicione os cabeçalhos e o corpo da requisição conforme necessário
+    });
+    if (!response.ok) {
+      throw new Error('Erro ao editar perfil do usuário')
+    }
+    alert('Perfil editado com sucesso')
+  } catch (error) {
+    console.error('Erro ao editar perfil do usuário:', error)
+    alert('Ocorreu um erro ao editar o perfil do usuário')
   }
-  
-  // Função para lidar com a edição do perfil
-  export const editUserProfile = () => {
-    alert('Edit Profile Clicked')
-  }
+}
