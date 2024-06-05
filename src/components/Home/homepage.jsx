@@ -28,6 +28,10 @@ function Homepage() {
     setIsPostBoxOpen(!isPostBoxOpen)
   }
 
+  const handlePost = (image) => {
+    setSelectedImage(image)
+  }
+
   return (
     <div className='feed' >
 

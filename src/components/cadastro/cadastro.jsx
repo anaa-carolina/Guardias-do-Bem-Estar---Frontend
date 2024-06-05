@@ -1,5 +1,4 @@
 import './Cadastro.css'
-// import UserPost from '../../api/UserPost'
 import { estadosBrasileiros } from './Estados'
 
 
@@ -12,14 +11,14 @@ function Cadastro() {
   const [nome, setNome] = useState('')
   const [email, setEmail] = useState('')
   const [telefone, setTelefone] = useState('')
-  const [nascimento, setNascimento] = useState('')
+  const [idade, setIdade] = useState('')
   const [cpf, setCpf] = useState('')
   const [cep, setCep] = useState('')
   const [uf, setUf] = useState('')
   const [cidade, setCidade] = useState('')
   const [endereco, setEndereco] = useState('')
   const [numero, setNumero] = useState('')
-  const [username, setUsername] = useState('')
+  const [nickname, setNickname] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
@@ -39,14 +38,14 @@ function Cadastro() {
       nome &&
       email &&
       telefone &&
-      nascimento &&
+      idade &&
       cpf &&
       cep &&
       uf &&
       cidade &&
       endereco &&
       numero &&
-      username &&
+      nickname &&
       password &&
       confirmPassword &&
       passwordsMatch
@@ -120,16 +119,16 @@ function Cadastro() {
             </div>
 
             <div className="form-group-box">
-              {/* DATA DE NASCIMENTO */}
+              {/* IDADE */}
               <div className="form-group">
-                <label htmlFor="nascimento" />
+                <label htmlFor="idade" />
                 <input
-                  type="date"
-                  id="nascimento"
-                  name="nascimento"
-                  placeholder="Data de nascimento"
-                  value={nascimento}
-                  onChange={(e) => setNascimento(e.target.value)}
+                  type="text"
+                  id="idade"
+                  name="idade"
+                  placeholder="Digite sua idade"
+                  value={idade}
+                  onChange={(e) => setIdade(e.target.value)}
                   required
                 />
               </div>
@@ -231,14 +230,14 @@ function Cadastro() {
 
             {/* USUÁRIO */}
             <div className="form-group">
-              <label htmlFor="username" />
+              <label htmlFor="nickname" />
               <input
                 type="text"
-                id="username"
-                name="username"
+                id="nickname"
+                name="nickname"
                 placeholder="Usuária"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                value={nickname}
+                onChange={(e) => setNickname(e.target.value)}
                 required
               />
             </div>
@@ -303,14 +302,14 @@ function Cadastro() {
                 nome,
                 email,
                 telefone,
-                nascimento,
+                idade,
                 cpf,
                 cep,
                 uf,
                 cidade,
                 endereco,
                 numero,
-                username,
+                nickname,
                 password,
               }}
               onSuccess={handleSuccess}
