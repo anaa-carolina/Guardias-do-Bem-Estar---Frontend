@@ -24,9 +24,7 @@ html, body {
 }
 
 .userDetails{
-    width: 100%;
-    height: 100%;
-    padding: 15px;
+    padding: 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -62,7 +60,7 @@ html, body {
 
 .ProfileOverview h3{
     font-family: Yrsa;
-    margin-top: 0;
+    margin: 5px;
     font-size: 15px;
     font-weight: 700;
     text-align: center;
@@ -83,7 +81,7 @@ html, body {
     text-align: left;
     color: black; 
     padding: 10px;
-
+    margin: 0;
 }
 
 .profileEdit button{
@@ -181,9 +179,9 @@ html, body {
 
 @media (min-width: 1024px) {
     .profileHeader {
-        padding: 0 40px;
         box-sizing: border-box;
         display: flex;
+        align-items: center;
         flex-direction: column;
     }
 
@@ -195,5 +193,81 @@ html, body {
     .postGrid {
         width: 200px;
         box-sizing: border-box;
+    }
+}
+
+@media (max-width: 600px) {
+    .profileHeader {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .userDetails {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .userIdentity {
+        width: 100%;
+        text-align: center;
+    }
+
+    .ProfileOverview {
+        justify-content: center;
+    }
+
+    .userBio {
+        text-align: center;
+    }
+
+    .userGrid {
+        padding: 0;
+    }
+
+    .postGrid {
+        width: 100%;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+    .profileHeader {
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    .userGrid {
+        gap: 10px;
+    }
+
+    .postGrid {
+        width: calc(50% - 5px);
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .profileHeader {
+        padding: 0 30px;
+    }
+
+    .userGrid {
+        gap: 15px;
+    }
+
+    .postGrid {
+        width: calc(33.333% - 10px);
+    }
+}
+
+@media (min-width: 1440px) {
+    .profileHeader {
+        padding: 0 40px;
+    }
+
+    .userGrid {
+        gap: 20px;
+    }
+
+    .postGrid {
+        width: calc(25% - 15px);
     }
 }

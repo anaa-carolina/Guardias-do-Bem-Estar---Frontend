@@ -7,8 +7,8 @@ import './Login.css'
 function Login() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const [erro, setErro] = useState('')
     const [showPassword, setShowPassword] = useState(false)
-    // const { login } = useContext(AuthContext)
     const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
@@ -39,6 +39,18 @@ function Login() {
         }
     }
 
+    // Função para lidar com o envio do formulário
+    const handleLogin = (e) => {
+        e.preventDefault() // Evitar o envio padrão do formulário
+
+        // Simulando validação do nome de usuário e senha
+        if (username === 'seuNickname' && password === 'suaSenha') {
+            navigate('/homepage') // Redirecionar para a página inicial se o login for bem-sucedido
+        } else {
+            setErro('Nome de usuário ou senha incorretos.') // Definir mensagem de erro
+        }
+    }
+
     const handleSignUpClick = () => {
         navigate('/cadastro')
     }
@@ -55,7 +67,9 @@ function Login() {
                     <hr />
                     <h2>Faça login para entrar na nossa comunidade!</h2>
 
-                    <form className="access" onSubmit={handleSubmit}>
+                    {/* No seu JSX, adicione o formulário com os campos de entrada para o nome de usuário e a senha */}
+                    <form className="access" onSubmit={handleLogin}>
+                        {/* Input para o nome de usuário */}
                         <div className="accessGroup">
                             <label htmlFor="usuaria" />
                             <input
@@ -70,6 +84,7 @@ function Login() {
                             />
                         </div>
 
+                        {/* Input para a senha */}
                         <div className="accessGroup">
                             <label htmlFor="senha" />
                             <div className="passwordInputWrapper">
@@ -89,11 +104,17 @@ function Login() {
                             </div>
                         </div>
 
+                        {/* Botão de envio */}
                         <button type="submit">Entrar</button>
+
+                        {/* Exibição de erro, se houver */}
+                        {erro && <p>{erro}</p>}
+
 
                         <div className="redefinirSenha">
                             <a href="/cadastro">Esqueci minha senha</a> {/* Link para a página de atualização de senha */}
                         </div>
+
                     </form>
 
                     <div className="newUser">

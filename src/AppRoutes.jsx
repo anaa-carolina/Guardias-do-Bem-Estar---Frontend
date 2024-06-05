@@ -1,15 +1,16 @@
 import { Route, Routes } from 'react-router-dom'
 
-import Login from './components/Login/Login'
-import Cadastro from './components/cadastro/Cadastro'
-import Voluntaria from "./components/cadastro/voluntária/Voluntaria"
-import CreditUser from "./components/cadastro/agradecimento/CreditUser/CreditUser"
-import CreditVolunteer from "./components/cadastro/agradecimento/CreditVolunteer/CreditVolunteer"
-import Formulario from "./components/cadastro/voluntária/formulario/Formulario"
-import Confirmacao from "./components/cadastro/voluntária/formulario/Confirmacao/Confirmacao"
-import Homepage from './components/Home/homepage'
+import Login from './components/Login/login'
+import Cadastro from './components/cadastro/cadastro'
+import Voluntaria from "./components/voluntária/Voluntaria"
+import Credit from "./components/agradecimento/Credit"
+import Formulario from "./components/voluntária/formulario/Formulario"
+import Confirmacao from "./components/voluntária/Confirmacao/Confirmacao"
+import Homepage from './components/Home/Homepage'
 import Perfil from './components/Perfil/Perfil'
 import Post from './components/UserPost/Post'
+
+
 const AppRoutes = () => {
   return (
     // Rotas da aplicação
@@ -18,8 +19,7 @@ const AppRoutes = () => {
       <Route path="/homepage" element={<Homepage />} />
       <Route path="/cadastro" element={<Cadastro />} />
       <Route path="/voluntaria" element={<Voluntaria />} />
-      <Route path="/credituser" element={<CreditUser />} />
-      <Route path="/creditvolunteer" element={<CreditVolunteer />} />
+      <Route path="/credit" element={<Credit />} />
       <Route path="/formulario" element={<Formulario />} />
       <Route path="/confirmacao" element={<Confirmacao />} />
       <Route path="/perfil" element={<Perfil />} />
