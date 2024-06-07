@@ -7,7 +7,7 @@ const Feed = ({ imageUrl, title, description }) => {
       <h3 className="feed-item-title">{title}</h3>
       <p className="feed-item-description">{description}</p>
     </div>
-  );
-};
+  )
+}
 
-export default Feed;
+export default Feed

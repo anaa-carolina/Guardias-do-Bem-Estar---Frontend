@@ -1,8 +1,9 @@
-
+import React, { useState } from 'react'
 import './Pagination.css'
 
 const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
     const pageNumbers = []
+    const [currentPage, setCurrentPage] = useState(1)
 
     for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
         pageNumbers.push(i)
@@ -11,6 +12,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
     const handleClick = (event, pageNumber) => {
         event.preventDefault()
         paginate(pageNumber)
+        setCurrentPage(pageNumber)
     }
 
     return (
@@ -19,7 +21,11 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
                 <ul className='pagination'>
                     {pageNumbers.map(number => (
                         <li key={number} className='page-item'>
-                            <a href='!#' className='page-link' onClick={(event) => handleClick(event, number)}>
+                            <a
+                                href='!#'
+                                className={`page-link ${currentPage === number ? 'active' : ''}`}
+                                onClick={(event) => handleClick(event, number)}
+                            >
                                 {number}
                             </a>
                         </li>

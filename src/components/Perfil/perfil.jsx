@@ -28,7 +28,9 @@ function Perfil() {
             <div className='userIdentity'>
 
               {/* imagem do usuário  */}
-              <img src={user.image || {fotoPadrao}} alt={`${user.name}'s profile`} />
+              <img src={fotoPadrao}
+              // src={user.image || {fotoPadrao}} 
+              alt={`${user.name}'s profile`} />
 
               {/* nome fornecido no cadastro */}
               <h1>{user.name}</h1>

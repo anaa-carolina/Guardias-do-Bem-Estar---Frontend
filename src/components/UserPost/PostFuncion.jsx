@@ -1,30 +1,33 @@
 import { useState } from 'react'
 
 const PostFunction = () => {
-  const [file, setFile] = useState(null)
-  const [post, setPost] = useState('')
+  const [postData, setPostData] = useState({ file: null, text: '' })
 
-  const handleFileChange = (event) => {
+  const handleFileSelect = (event) => {
     const selectedFile = event.target.files[0]
-    setFile(selectedFile)
+    setPostData({ ...postData, file: selectedFile })
   }
 
-  const postText = (e) => {
-    setPost(e.target.value)
+  const postText = (event) => {
+    setPostData({ ...postData, text: event.target.value })
   }
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    if (file || post.trim() !== '') {
-      console.log('Arquivo selecionado:', file)
-      console.log('Texto do post:', post)
+    if (postData.file || postData.text.trim() !== '') {
+      console.log('Arquivo selecionado:', postData.file)
+      console.log('Texto do post:', postData.text)
       // Adicione aqui o código para enviar o arquivo e o texto do post para o servidor
     } else {
       console.log('Nenhum arquivo selecionado e nenhum texto inserido')
     }
   }
 
-  return { handleFileChange, postText, handleSubmit }
+  const handleRemoveFile = () => {
+    setPostData({ ...postData, file: null })
+  }
+
+  return { handleFileSelect, postText, handleSubmit, handleRemoveFile }
 }
 
-export default PostFunction;
+export default PostFunction
