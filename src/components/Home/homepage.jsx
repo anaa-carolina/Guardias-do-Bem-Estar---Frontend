@@ -5,14 +5,16 @@ import Feed from './Feed/Feed';
 import { useState, useEffect } from 'react';
 
 function Homepage() {
+
   // Estado para os posts
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState([])
+
   // Estado para a página atual
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1)
+
   // Constante para o número de posts por página
-  const postsPerPage = 5;
-  // Estado para a altura do header
-  const [headerHeight, setHeaderHeight] = useState(0);
+  const postsPerPage = 5
+
 
   // // Simulando a recuperação de posts de uma API
   // useEffect(() => {
@@ -44,35 +46,35 @@ function Homepage() {
             description: `Description ${i}`
           });
         }
-        setPosts(data);
+        setPosts(data)
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error fetching data:', error)
       }
-    };
+    }
 
-    fetchData();
-  }, []);
+    fetchData()
+  }, [])
 
   // Lógica para calcular os índices dos posts a serem exibidos na página atual
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
 
   // Função para alterar a página
-  const paginate = pageNumber => setCurrentPage(pageNumber);
+  const paginate = pageNumber => setCurrentPage(pageNumber)
 
   // Efeito para obter a altura do header e atualizar o estado
   useEffect(() => {
-    const header = document.querySelector('.header');
+    const header = document.querySelector('.header')
     if (header) {
-      setHeaderHeight(header.clientHeight);
+      setHeaderHeight(header.clientHeight)
     }
-  }, []);
+  }, [])
 
   return (
     <div className='feed'>
       <Header />
-      <div className="homepage" style={{ marginTop: headerHeight }}>
+      <div className="homepage" >
         <div className="headerGridPosts">
           {currentPosts.map(post => (
             <Feed key={post.id} imageUrl={post.imageUrl} title={post.title} description={post.description} />
@@ -81,7 +83,7 @@ function Homepage() {
         <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate} />
       </div>
     </div>
-  );
+  )
 }
 
-export default Homepage;
+export default Homepage

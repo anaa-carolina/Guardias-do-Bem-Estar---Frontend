@@ -12,11 +12,15 @@ import { useState } from 'react'
 
 const Header = () => {
 
-    const [isPostBoxOpen, setIsPostBoxOpen] = useState(false);
+    const [isPostBoxOpen, setIsPostBoxOpen] = useState(false)
 
     const togglePostBox = () => {
-        setIsPostBoxOpen(!isPostBoxOpen);
-    };
+        setIsPostBoxOpen(!isPostBoxOpen)
+    }
+
+    const closePostBox = () => {
+        setIsPostBoxOpen(false)
+    }
 
     return (
         <div className='headerLine'>
@@ -51,9 +55,12 @@ const Header = () => {
                     <img alt='Sair' src={sairIcon} />
                 </div>
             </div>
-            {isPostBoxOpen && <Post />}
+
+            {isPostBoxOpen && <Post handleClose={closePostBox} />}
+
         </div>
     )
 }
+
 
 export default Header

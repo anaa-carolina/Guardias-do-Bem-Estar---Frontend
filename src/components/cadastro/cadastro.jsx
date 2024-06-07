@@ -13,6 +13,7 @@ function Cadastro() {
   const [telefone, setTelefone] = useState('')
   const [idade, setIdade] = useState('')
   const [cpf, setCpf] = useState('')
+  const [genero, setGenero] = useState('')
   const [cep, setCep] = useState('')
   const [uf, setUf] = useState('')
   const [cidade, setCidade] = useState('')
@@ -40,6 +41,7 @@ function Cadastro() {
       telefone &&
       idade &&
       cpf &&
+      genero &&
       cep &&
       uf &&
       cidade &&
@@ -133,6 +135,22 @@ function Cadastro() {
                 />
               </div>
 
+              {/* GÊNERO DA USUÁRIA */}
+              <div className="form-group">
+                <label htmlFor="genero" />
+                <select
+                  id="genero"
+                  name="genero"
+                  value={genero}
+                  onChange={(e) => setGenero(e.target.value)}
+                  required
+                >
+                  <option value="">Selecione...</option>
+                  <option value="Mulher">Mulher</option>
+                  <option value="Trans">Trans</option>
+                </select>
+              </div>
+
               {/* CPF DA USUÁRIA */}
               <div className="form-group">
                 <label htmlFor="nascimento" />
@@ -146,6 +164,7 @@ function Cadastro() {
                   required
                 />
               </div>
+
             </div>
 
             <div className="form-group-box">
