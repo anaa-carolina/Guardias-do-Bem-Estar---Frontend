@@ -9,8 +9,10 @@ import Post from '../UserPost/Post'
 
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import { useAuth } from '../../hooks/useAuth'
 
 const Header = () => {
+    const { logout } = useAuth()
 
     const [isPostBoxOpen, setIsPostBoxOpen] = useState(false)
 
@@ -52,7 +54,9 @@ const Header = () => {
                 </div>
 
                 <div className='logout'>
-                    <img alt='Sair' src={sairIcon} />
+                    <Link to="/" onClick={logout}>
+                        <img alt='Sair' src={sairIcon} />
+                    </Link>
                 </div>
             </div>
 
@@ -62,5 +66,4 @@ const Header = () => {
     )
 }
 
-
-export default Header
+export default Header;

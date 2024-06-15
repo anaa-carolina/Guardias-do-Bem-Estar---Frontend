@@ -1,7 +1,6 @@
-import React, { useState, useContext } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
-// import { AuthContext } from '../autenticacao/AuthProvider'
 import './Login.css'
 
 function Login() {
@@ -29,8 +28,7 @@ function Login() {
             })
 
             if (response.ok) {
-                Login() // Chama a função de login do contexto
-                navigate('/home') // Redireciona para a página inicial após o login bem-sucedido
+                navigate('/homepage')
             } else {
                 console.log('Login failed')
             }
@@ -39,15 +37,13 @@ function Login() {
         }
     }
 
-    // Função para lidar com o envio do formulário
     const handleLogin = (e) => {
-        e.preventDefault() // Evitar o envio padrão do formulário
+        e.preventDefault()
 
-        // Simulando validação do nome de usuário e senha
         if (username === 'seuNickname' && password === 'suaSenha') {
-            navigate('/homepage') // Redirecionar para a página inicial se o login for bem-sucedido
+            navigate('/homepage');
         } else {
-            setErro('Nome de usuário ou senha incorretos.') // Definir mensagem de erro
+            setErro('Nome de usuário ou senha incorretos.')
         }
     }
 
@@ -67,9 +63,7 @@ function Login() {
                     <hr />
                     <h2>Faça login para entrar na nossa comunidade!</h2>
 
-                    {/* No seu JSX, adicione o formulário com os campos de entrada para o nome de usuário e a senha */}
                     <form className="access" onSubmit={handleLogin}>
-                        {/* Input para o nome de usuário */}
                         <div className="accessGroup">
                             <label htmlFor="usuaria" />
                             <input
@@ -84,12 +78,11 @@ function Login() {
                             />
                         </div>
 
-                        {/* Input para a senha */}
                         <div className="accessGroup">
                             <label htmlFor="senha" />
                             <div className="passwordInputWrapper">
                                 <input
-                                    type={showPassword ? "text" : "password"}
+                                    type={showPassword ? 'text' : 'password'}
                                     id="senha"
                                     name="senha"
                                     placeholder="Senha"
@@ -104,23 +97,23 @@ function Login() {
                             </div>
                         </div>
 
-                        {/* Botão de envio */}
                         <button type="submit">Entrar</button>
 
-                        {/* Exibição de erro, se houver */}
                         {erro && <p>{erro}</p>}
 
-
                         <div className="redefinirSenha">
-                            <a href="/cadastro">Esqueci minha senha</a> {/* Link para a página de atualização de senha */}
+                        <div className="redefinirSenha">
+                            <a href="/cadastro">Esqueci minha senha</a>
                         </div>
-
+                        </div>
                     </form>
 
                     <div className="newUser">
                         <hr />
                         <h1>É nova por aqui?</h1>
-                        <button type="button" onClick={handleSignUpClick}>Criar conta</button>
+                        <button type="button" onClick={handleSignUpClick}>
+                            Criar conta
+                        </button>
                     </div>
                 </div>
             </div>

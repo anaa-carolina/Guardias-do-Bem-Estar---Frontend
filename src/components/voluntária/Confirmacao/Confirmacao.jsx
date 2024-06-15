@@ -23,7 +23,7 @@ function Confirmacao () {
 
             </div>
 
-            <p>Obrigada por se voluntáriar!</p>
+            <p>Obrigada por se voluntariar!</p>
             <p>você poderá acompanhar o status do cadastro logando em sua conta.</p>
             <hr />
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import './Pagination.css'
 
 const Pagination = ({ postsPerPage, totalPosts, paginate }) => {

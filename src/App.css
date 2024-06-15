@@ -10,3 +10,12 @@
   height: 100%;
 }
 
+.warnings{
+  font-family: Yrsa;
+  margin: 5px;
+  font-size: 15px;
+  font-weight: 200;
+  text-align: center;
+  color: black;
+}
+
