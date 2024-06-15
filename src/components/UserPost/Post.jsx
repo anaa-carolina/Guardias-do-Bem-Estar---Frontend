@@ -1,16 +1,58 @@
+import axios from 'axios';
+import './Post.css'
 import { useState } from 'react';
-import './Post.css';
+import { usePostContext } from './PostContext';
+import { useUserProfile } from '../Perfil/PerfilFunction';
 import AddFiles from '../../assets/img/icones/feed/files.png';
-import PostFunction from './PostFuncion';
-import fotoPadrao from '../../assets/img/icones/voluntario/fotoPadrao.jpg';
+import imgPadrao from '../../assets/img/icones/voluntario/fotoPadrao.jpg';
 
 const Post = ({ handleClose }) => {
-    const { handleFileSelect, postText, handleSubmit } = PostFunction();
+    const baseURL = 'http://localhost:5173'
+    const { user } = useUserProfile();
+    const [postText, setPostText] = useState('');
     const [selectedFile, setSelectedFile] = useState(null);
+    const { posts, setPosts } = usePostContext();
+    const [error, setError] = useState(null); // Estado para gerenciar erros
+
+    const handleFileSelect = (event) => {
+        setSelectedFile(event.target.files[0]);
+    }
 
     const handleRemoveFile = () => {
         setSelectedFile(null);
-    };
+    }
+
+    const handlePostSubmit = async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData();
+        formData.append('description', postText);
+        if (selectedFile) {
+            formData.append('file', selectedFile);
+        }
+
+        try {
+            const response = await axios.post(`${baseURL}/api/PostAPI`, formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+            });
+
+            const newPost = {
+                id: response.data.id,
+                imageUrl: response.data.imageUrl,
+                description: response.data.description,
+            };
+
+            setPosts([...posts, newPost]);
+            setSelectedFile(null);
+            setPostText('');
+            handleClose();
+        } catch (error) {
+            console.error('Erro ao enviar dados:', error);
+            alert('Não foi possível criar o post. Por favor, tente novamente mais tarde.')
+        }
+    }
 
     return (
         <div className='postPage'>
@@ -20,16 +62,28 @@ const Post = ({ handleClose }) => {
                     <button className='closeButton' onClick={handleClose}>X</button>
                 </div>
                 <hr className='separator' />
-                <div className='postPerfil'>
-                    <img src={fotoPadrao} alt="User" />
-                    <h1>User Name</h1>
-                </div>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handlePostSubmit}>
                     <div className='post'>
+                        <div className="postUser">
+                            {user ? (
+                                <div className="postPerfil">
+                                    <img
+                                        src={user.profileImage || imgPadrao}
+                                        alt={`${user.name}'s profile`}
+                                        className='profileImage'
+                                    />
+                                    <h2 className='profileName'>{user.name}</h2>
+                                </div>
+                            ) : (
+                                <p>Carregando...</p>
+                            )}
+                        </div>
+
                         <textarea
                             className='editableContent'
                             placeholder="Compartilhe o que está pensando:"
-                            onChange={postText}
+                            value={postText}
+                            onChange={(e) => setPostText(e.target.value)}
                             type="text"
                         />
                     </div>
@@ -38,8 +92,8 @@ const Post = ({ handleClose }) => {
                             <h2>Adicione uma foto</h2>
                             <div className='files'>
                                 <label>
-                                    <img alt="Add Files" src={AddFiles} onClick={handleFileSelect} />
-                                    <input type="file" id="fileInput" className="fileInput" onChange={(e) => setSelectedFile(e.target.files[0])} />
+                                    <img alt="Add Files" src={AddFiles} />
+                                    <input type="file" id="fileInput" className="fileInput" onChange={handleFileSelect} />
                                 </label>
                             </div>
                         </div>
@@ -47,7 +101,7 @@ const Post = ({ handleClose }) => {
                             {selectedFile && (
                                 <div className='selectedFile'>
                                     <p>{selectedFile.name}</p>
-                                    <button onClick={handleRemoveFile}>Remover</button>
+                                    <button type="button" onClick={handleRemoveFile}>Remover</button>
                                 </div>
                             )}
                         </div>
@@ -57,8 +111,10 @@ const Post = ({ handleClose }) => {
                     </div>
                 </form>
             </div>
+            {/* Exibição de erro se houver */}
+            {error && <p className="error">{error}</p>}
         </div>
     );
-};
+}
 
 export default Post;

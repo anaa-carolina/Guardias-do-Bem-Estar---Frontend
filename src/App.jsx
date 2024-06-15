@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import Preloading from './components/PreLoading/PreLoading'
 import AppRoutes from './AppRoutes'
+import { PostProvider } from './components/UserPost/PostContext'
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -12,16 +13,19 @@ function App() {
       setLoading(false)
     }, 4000) // simula o loading de 4s
 
-    // limpe o timeout quando o componente for desmontado
+
     return () => clearTimeout(timeout)
   }, [loading])
 
   return (
-    <div className="App">
-      <Router>
-        {loading ? <Preloading /> : <AppRoutes />}
-      </Router>
-    </div>
+    <PostProvider >
+      <div className="App">
+        <Router>
+          {loading ? <Preloading /> : <AppRoutes />}
+        </Router>
+      </div >
+    </PostProvider>
+
   )
 }
 

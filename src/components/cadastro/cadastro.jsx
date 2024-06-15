@@ -54,6 +54,8 @@ function Cadastro() {
     )
   }
 
+  
+
   const handleSubmit = (e) => {
     e.preventDefault()
 
@@ -65,7 +67,7 @@ function Cadastro() {
   }
 
   const handleCancel = () => {
-    navigate('/login')
+    navigate('/')
   }
 
   const handleSuccess = () => {
@@ -145,8 +147,8 @@ function Cadastro() {
                   onChange={(e) => setGenero(e.target.value)}
                   required
                 >
-                  <option value="">Selecione...</option>
-                  <option value="Mulher">Mulher</option>
+                  <option value="">Gênero</option>
+                  <option value="Cis">Cis</option>
                   <option value="Trans">Trans</option>
                 </select>
               </div>
@@ -193,7 +195,7 @@ function Cadastro() {
                   onChange={(e) => setUf(e.target.value)}
                   required
                 >
-                  <option value="">Selecione...</option>
+                  <option value="">Estado...</option>
                   {estadosBrasileiros.map((estado) => (
                     <option key={estado.sigla} value={estado.sigla}>
                       {estado.nome}
